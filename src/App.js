@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 const P = styled.p`
   font-size: 24px;
@@ -40,7 +40,7 @@ const BlockButton = styled(Button)`
 `;
 
 const Link = ({ className, ...props }) => {
-  return <a className={className} {...props} ></a>;
+  return <a className={className} {...props}></a>;
 };
 
 const StyledLink = styled(Link)`
@@ -57,9 +57,22 @@ const Input = styled.input.attrs((props) => ({
 `;
 
 const Password = styled(Input).attrs({
-  type: 'password'
-})`
+  type: "password",
+})``;
 
+const Girar = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Rotar = styled.div`
+  display: inline-block;
+  animation: ${Girar} 2s linear infinite;
 `;
 
 const App = () => {
@@ -79,6 +92,8 @@ const App = () => {
       <StyledLink>Link con Estilo</StyledLink>
       <Input />
       <Password />
+      <br />
+      <Rotar>Estoy Girando</Rotar>
     </Content>
   );
 };
