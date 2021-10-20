@@ -1,12 +1,20 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import styled from "styled-components";
 
-function App() {
+const P = styled.p`
+  font-size: 24px;
+  color: red;
+`;
+
+const Content = styled.div`
+  padding: 20px 25px;
+`;
+
+const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Content>
+      <P>Hello World</P>
+    </Content>
   );
-}
-
+};
 export default App;
